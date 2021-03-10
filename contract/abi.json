@@ -1,0 +1,313 @@
+{
+  "version": "eosio::abi/1.0",
+  "structs": [
+    {
+      "name": "init",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "update",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        },
+        {
+          "name": "price",
+          "type": "asset"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "name": "pic",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "verify",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "withdraw",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "remove",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "game",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        },
+        {
+          "name": "start",
+          "type": "name"
+        },
+        {
+          "name": "winner",
+          "type": "name"
+        },
+        {
+          "name": "dateline",
+          "type": "uint64"
+        },
+        {
+          "name": "status",
+          "type": "string"
+        },
+        {
+          "name": "price",
+          "type": "asset"
+        },
+        {
+          "name": "paid",
+          "type": "asset"
+        },
+        {
+          "name": "liked",
+          "type": "asset"
+        },
+        {
+          "name": "pic",
+          "type": "string"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "rate",
+          "type": "uint16"
+        }
+      ]
+    },
+    {
+      "name": "record",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "int64"
+        },
+        {
+          "name": "gameid",
+          "type": "int64"
+        },
+        {
+          "name": "player",
+          "type": "name"
+        },
+        {
+          "name": "pay",
+          "type": "asset"
+        },
+        {
+          "name": "dateline",
+          "type": "uint64"
+        },
+        {
+          "name": "winid",
+          "type": "uint64"
+        }
+      ]
+    },
+    {
+      "name": "player",
+      "base": "",
+      "fields": [
+        {
+          "name": "id",
+          "type": "name"
+        },
+        {
+          "name": "ref",
+          "type": "name"
+        },
+        {
+          "name": "play_id",
+          "type": "int64"
+        }
+      ]
+    },
+    {
+      "name": "account",
+      "base": "",
+      "fields": [
+        {
+          "name": "primary",
+          "type": "uint64"
+        },
+        {
+          "name": "balance",
+          "type": "extended_asset"
+        }
+      ]
+    },
+    {
+      "name": "pruned_block_header_type",
+      "base": "",
+      "fields": [
+        {
+          "name": "nonce",
+          "type": "uint64"
+        },
+        {
+          "name": "number",
+          "type": "uint64"
+        },
+        {
+          "name": "timestamp",
+          "type": "string"
+        },
+        {
+          "name": "difficulty",
+          "type": "string"
+        },
+        {
+          "name": "tx_hash",
+          "type": "checksum256"
+        },
+        {
+          "name": "parent_hash",
+          "type": "checksum256"
+        },
+        {
+          "name": "uncle_hash",
+          "type": "checksum256"
+        },
+        {
+          "name": "transaction_root_hash",
+          "type": "checksum256"
+        },
+        {
+          "name": "receipt_root_hash",
+          "type": "checksum256"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "name": "init",
+      "type": "init",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "update",
+      "type": "update",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "verify",
+      "type": "verify",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "withdraw",
+      "type": "withdraw",
+      "ricardian_contract": ""
+    },
+    {
+      "name": "remove",
+      "type": "remove",
+      "ricardian_contract": ""
+    }
+  ],
+  "tables": [
+    {
+      "name": "games",
+      "type": "game",
+      "index_type": "i64",
+      "key_names": [
+        "id"
+      ],
+      "key_types": [
+        "int64"
+      ]
+    },
+    {
+      "name": "players",
+      "type": "player",
+      "index_type": "i64",
+      "key_names": [
+        "id"
+      ],
+      "key_types": [
+        "name"
+      ]
+    },
+    {
+      "name": "accounts",
+      "type": "account",
+      "index_type": "i64",
+      "key_names": [
+        "primary"
+      ],
+      "key_types": [
+        "uint64"
+      ]
+    },
+    {
+      "name": "records",
+      "type": "record",
+      "index_type": "i64",
+      "key_names": [
+        "id"
+      ],
+      "key_types": [
+        "int64"
+      ]
+    },
+    {
+      "name": "blocks",
+      "index_type": "i64",
+      "key_names": [
+        "nonce"
+      ],
+      "key_types": [
+        "uint64"
+      ],
+      "type": "pruned_block_header_type"
+    }
+  ]
+}
